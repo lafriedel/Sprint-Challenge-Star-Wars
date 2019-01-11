@@ -2,7 +2,7 @@ import React from 'react';
 
 const Character = props => {
     return (
-        <li>{props.char.name}</li>
+        <li className="char-name">{props.char.name}</li>
     )
 }
 

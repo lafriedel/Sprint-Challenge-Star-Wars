@@ -1,0 +1,13 @@
+/* CharacterList */
+.character-list {
+    background: white;
+    width: 50%;
+}
+
+li {
+    list-style: none;
+}
+
+.char-name {
+    text-shadow: 1px 1px 5px #fff;
+}
