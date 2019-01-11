@@ -10,8 +10,6 @@ const CharacterList = props => {
         {props.starwarsChars.map((char, index) => {
           return <Character char={char} key={index} />;
         })}
-        
-        {/* <a href={props.nextURL}>Next</a> */}
       </ul>
     </section>
   );

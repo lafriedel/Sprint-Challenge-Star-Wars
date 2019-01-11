@@ -62,7 +62,7 @@ body {
   font-family: sans-serif;
 }
 
-p, ul, li, a {
+p, ul, li, a, button {
 	font-size: 1.5rem;
 	color: #443e3e;
 }

@@ -47,31 +47,21 @@ class App extends Component {
     this.getCharacters(this.state.prevURL);
   };
 
-  // getSingleCharacter = () => {
-  //   this.getCharacters(this.state.nextURL);
-  // }
-
-  // goToNextChar = () => {
-  //   this.setState({
-  //     currentIndex: this.state.currentIndex + 1,
-  //     singleChar: data.results[this.state.currentIndex + 1]
-  //   })
-  // }
-
   render() {
     return (
       <div className="App">
         <h1 className="Header">Star Wars Characters</h1>
-        <CharacterList
-          starwarsChars={this.state.starwarsChars}
-          singleChar={this.state.singleChar}
-          nextURL={this.state.nextURL}
-          prevURL={this.state.prevURL}
-        />
         <Pagination
           goToNextPage={this.goToNextPage}
           goToPrevPage={this.goToPrevPage}
+          nextURL={this.state.nextURL}
+          prevURL={this.state.prevURL}
         />
+        <CharacterList
+          starwarsChars={this.state.starwarsChars}
+          singleChar={this.state.singleChar}
+        />
+
       </div>
     );
   }
