@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import CharacterList from './components/CharacterList';
-import './App.css';
+import React, { Component } from "react";
+import CharacterList from "./components/CharacterList";
+import Pagination from './components/Pagination';
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       starwarsChars: [],
-      singleChar: {},
       nextURL: "",
-      prevURL: "",
-      currentIndex: 0
+      prevURL: ""
     };
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people', 0);
+    this.getCharacters("https://swapi.co/api/people");
   }
 
   getCharacters = (URL, index) => {
@@ -27,16 +26,25 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ 
-          starwarsChars: data.results, 
-          singleChar: data.results[index], 
-          nextURL: data.next, 
+        this.setState({
+          starwarsChars: data.results,
+          nextURL: data.next,
           prevURL: data.previous
-         }, console.log(data.results[index]));
+        });
       })
       .catch(err => {
         throw new Error(err);
       });
+  };
+
+  goToNextPage = event => {
+    event.preventDefault();
+    this.getCharacters(this.state.nextURL);
+  };
+
+  goToPrevPage = event => {
+    event.preventDefault();
+    this.getCharacters(this.state.prevURL);
   };
 
   // getSingleCharacter = () => {
@@ -50,16 +58,19 @@ class App extends Component {
   //   })
   // }
 
-
   render() {
     return (
       <div className="App">
         <h1 className="Header">Star Wars Characters</h1>
-        <CharacterList 
+        <CharacterList
           starwarsChars={this.state.starwarsChars}
           singleChar={this.state.singleChar}
           nextURL={this.state.nextURL}
           prevURL={this.state.prevURL}
+        />
+        <Pagination
+          goToNextPage={this.goToNextPage}
+          goToPrevPage={this.goToPrevPage}
         />
       </div>
     );
