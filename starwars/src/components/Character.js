@@ -2,13 +2,16 @@ import React from 'react';
 
 const Character = props => {
     return (
-        <li className="char-name">{props.char.name}
-            <ul>
-                <li>Gender: {props.char.gender}</li>
-                <li>Eye Color: {props.char["eye_color"]}</li>
-                <li>Hair Color: {props.char["hair_color"]}</li>
-                <li># of movie appearances: {props.char.films.length + 1}</li>
+        <li className="char-name"><h3>{props.char.name}</h3>
+        <div>
+        <ul className="char-info">
+                <li><span>Gender:</span> {props.char.gender}</li>
+                <li><span>Eye Color:</span> {props.char["eye_color"]}</li>
+                <li><span>Hair Color:</span> {props.char["hair_color"]}</li>
+                <li><span># of movie appearances:</span> {props.char.films.length + 1}</li>
             </ul>
+        </div>
+
         </li>
     );
 }

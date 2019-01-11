@@ -63,17 +63,20 @@ body {
 }
 
 p, ul, li, a {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
+	color: #443e3e;
 }
 
 h1 {
-  font-size: 3.5rem;
+	font-size: 8rem;
+	font-weight: 800;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 7rem;
 }
 
 h3 {
-  font-size: 2.5rem;
+	font-size: 5rem;
+	font-weight: 800;
 }
