@@ -1,0 +1,62 @@
+/* CharacterList */
+.character-list {
+    background: #CEDBE5;
+    width: 55%;
+    opacity: .9;
+    padding: 30px;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+li span {
+    font-weight: 700;
+}
+
+.char-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.char-name h3{
+    text-shadow: 1px 1px 5px #fff;
+}
+
+.char-name:last-of-type {
+    margin-bottom: 0;
+}
+.char-info {
+    margin-left: 30px;
+    width: 200px;
+}
+
+.char-info li {
+    margin-bottom: 15px;
+}
+
+/* Pagination */
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #CEDBE5;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 10px;
+    opacity: .9;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .4;
+}
